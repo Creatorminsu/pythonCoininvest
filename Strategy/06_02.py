@@ -1,0 +1,12 @@
+import pybithumb
+import time
+
+con_key = "8dfb806e6f71213595690282985b5316"
+sec_key = "de95da6be73e9a287ba1a86c21524611"
+
+bithumb = pybithumb.Bithumb(con_key, sec_key)
+
+for ticker in pybithumb.get_tickers():
+    balance = bithumb.get_balance(ticker)
+    print(ticker, ":", balance)
+    time.sleep(0.1)
